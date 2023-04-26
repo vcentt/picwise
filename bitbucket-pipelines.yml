@@ -10,9 +10,9 @@ pipelines:
           - rm -rf *package-lock.json
           - npm install
           - npm run build
-          - zip -r build.zip dest
+          - tar -czvf build.tar.gz dest
         artifacts:
-          - frontend/build.zip
+          - frontend/build.tar.gz
 
     - step:
         name: Deploy to Heroku
