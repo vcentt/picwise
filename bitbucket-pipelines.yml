@@ -10,9 +10,17 @@ pipelines:
           - rm -rf *package-lock.json
           - npm install
           - npm run build
+          - zip -r build.zip dest
         artifacts:
-          - frontend/dest/**
+          - frontend/build.zip
+
     - step:
-        name: test
+        name: Deploy to Heroku
+        deployment: production
         script:
-          - echo "Finished"
+          - pipe: atlassian/heroku-deploy:1.2.2
+            variables:
+              HEROKU_API_KEY: $H_API_KEY
+              HEROKU_APP_NAME: $H_APP_NAME
+              HEROKU_EMAIL: $H_EMAIL
+              ZIP_FILE: "frontend/build.zip"
