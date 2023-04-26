@@ -5,11 +5,13 @@ pipelines:
         name: Build and Test Frontend
         script:
           - cd frontend
+          - npm cache clean --force
+          - rm -rf node_modules
           - npm install
           - npm install vite@latest
           - npm run build
         artifacts:
-          - frontend/build/**
+          - frontend/dest/**
     - step:
         name: test
         script:
