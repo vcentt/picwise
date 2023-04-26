@@ -5,19 +5,16 @@ pipelines:
         name: Build and Test Frontend
         script:
           - cd frontend
-          - npm cache clean --force
-          - rm -rf node_modules
-          - rm -rf *package-lock.json
-          - npm install
-          - npm run build
-          - tar -czvf build.tar.gz dist
+          - git archive --format=tar.gz main -o frontend.tar.gz
         artifacts:
-          - frontend/build.tar.gz
+          - frontend/frontend.tar.gz
     - step:
         name: Deploy to Heroku
+        deployment: production
         script:
-        - pipe: atlassian/heroku-deploy:2.1.0
-          variables:
-            HEROKU_API_KEY: $H_API_KEY
-            HEROKU_APP_NAME: $H_APP_NAME
-            ZIP_FILE: frontend/build.tar.gz
+          - pipe: atlassian/heroku-deploy:2.1.0
+            variables:
+              HEROKU_API_KEY: $H_API_KEY
+              HEROKU_APP_NAME: $H_APP_NAME
+              ZIP_FILE: frontend/frontend.tar.gz
+              WAIT: 'true'
