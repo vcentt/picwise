@@ -6,6 +6,7 @@ pipelines:
         script:
           - cd frontend
           - npm install
+          - npm install vite@latest
           - npm run build
         artifacts:
           - frontend/build/**
