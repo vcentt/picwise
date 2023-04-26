@@ -10,7 +10,7 @@ pipelines:
           - rm -rf *package-lock.json
           - npm install
           - npm run build
-          - tar -czvf build.tar.gz dest
+          - tar -czvf build.tar.gz dist
         artifacts:
           - frontend/build.tar.gz
 
