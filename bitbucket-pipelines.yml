@@ -13,14 +13,11 @@ pipelines:
           - tar -czvf build.tar.gz dist
         artifacts:
           - frontend/build.tar.gz
-
     - step:
         name: Deploy to Heroku
-        deployment: production
         script:
-          - pipe: atlassian/heroku-deploy:1.2.2
-            variables:
-              HEROKU_API_KEY: $H_API_KEY
-              HEROKU_APP_NAME: $H_APP_NAME
-              HEROKU_EMAIL: $H_EMAIL
-              ZIP_FILE: "frontend/build.zip"
+        - pipe: atlassian/heroku-deploy:2.1.0
+          variables:
+            HEROKU_API_KEY: $H_API_KEY
+            HEROKU_APP_NAME: $H_APP_NAME
+            ZIP_FILE: "frontend/build.zip"
