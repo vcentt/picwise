@@ -6,6 +6,8 @@ pipelines:
         script:
           - cd frontend
           - rm -rf *package-lock
+          - rm -rf node_modules
+          - npm i eslint@latest @typescript-eslint/parser@latest @typescript-eslint/eslint-plugin@latest --save
           - npm install --package-lock-only
           - git archive --format=tar.gz main -o frontend-app.tar.gz
         artifacts:
