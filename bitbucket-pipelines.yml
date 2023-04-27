@@ -16,6 +16,6 @@ pipelines:
             variables:
               HEROKU_API_KEY: $H_API_KEY
               HEROKU_APP_NAME: $H_APP_NAME
-              ZIP_FILE: frontend/frontend.tar.gz
+              ZIP_FILE: frontend/frontend-app.tar.gz
               WAIT: 'true'
               DEBUG: 'true'
