@@ -5,9 +5,9 @@ pipelines:
         name: Build and Test Frontend
         script:
           - cd frontend
-          - git archive --format=tar.gz main -o frontend.tar.gz
+          - git archive --format=tar.gz main -o frontend-app.tar.gz
         artifacts:
-          - frontend/frontend.tar.gz
+          - frontend/frontend-app.tar.gz
     - step:
         name: Deploy to Heroku
         deployment: production
