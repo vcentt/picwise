@@ -5,6 +5,8 @@ pipelines:
         name: Build and Test Frontend
         script:
           - cd frontend
+          - rm -rf *package-lock
+          - npm install --package-lock-only
           - git archive --format=tar.gz main -o frontend-app.tar.gz
         artifacts:
           - frontend/frontend-app.tar.gz
