@@ -9,7 +9,8 @@ pipelines:
           - rm -rf node_modules
           - npm install
           - npm ci
-          - npm install --package-lock-only          
+          - npm install --package-lock-only
+          - npm i eslint@latest @typescript-eslint/parser@latest @typescript-eslint/eslint-plugin@latest --save          
           - git archive --format=tar.gz main -o frontend-app.tar.gz
         artifacts:
           - frontend/frontend-app.tar.gz
