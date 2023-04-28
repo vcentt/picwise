@@ -5,17 +5,11 @@ pipelines:
         name: Build Frontend
         script:
           - cd frontend          
-          - git archive --format=tar.gz main -o frontend-app.tar.gz
+          - git archive --format=tar.gz main -o frontend-app.zip
         artifacts:
-          - frontend/frontend-app.tar.gz
+          - frontend/frontend-app.zip
     - step:
         name: Deploy to Heroku
         deployment: production
         script:
-          - pipe: atlassian/heroku-deploy:2.1.0
-            variables:
-              HEROKU_API_KEY: $H_API_KEY
-              HEROKU_APP_NAME: $H_APP_NAME
-              ZIP_FILE: frontend/frontend-app.tar.gz
-              WAIT: 'true'
-              DEBUG: 'true'
+          - curl -H "Content-Type: application/zip"  -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN --data-binary frontend/frontend-app.zip  https://api.netlify.com/api/v1/sites/PicwiseTeam.netlify.app/deploys
