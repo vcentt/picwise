@@ -12,4 +12,4 @@ pipelines:
         name: Deploy to Heroku
         deployment: production
         script:
-          - curl -H "Content-Type: application/zip"  -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN --data-binary frontend/frontend-app.zip  https://api.netlify.com/api/v1/sites/PicwiseTeam.netlify.app/deploys
+          - curl -H "Content-Type: application/zip"  -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" --data-binary frontend/frontend-app.zip  https://api.netlify.com/api/v1/sites/PicwiseTeam.netlify.app/deploys
