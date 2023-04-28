@@ -5,11 +5,7 @@ pipelines:
         name: Build Frontend
         script:
           - cd frontend          
-          - git archive --format=tar.gz main -o frontend-app.zip
-        artifacts:
-          - frontend/frontend-app.zip
-    - step:
-        name: Deploy to Netlify
-        script:
-          - zip -r frontend-app.zip frontend/
-          - curl -H "Content-Type: application/zip" -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" --data-binary "@frontend-app.zip" https://api.netlify.com/api/v1/sites/PicwiseTeam.netlify.app/deploys
+          - npm install -g netlify-cli
+          - npm install
+          - npm run build
+          - netlify deploy --prod --dir=./build --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
