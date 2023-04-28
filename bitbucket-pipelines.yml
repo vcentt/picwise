@@ -2,7 +2,7 @@ image: node:18.14.2
 pipelines:
   default:
     - step:
-        name: Build and Test Frontend
+        name: Build Frontend
         script:
           - cd frontend          
           - git archive --format=tar.gz main -o frontend-app.tar.gz
