@@ -2,6 +2,11 @@ image: node:18.14.2
 pipelines:
   default:
     - step:
+        name: env
+        script:
+          - cde frontend
+          - export NETLIFY_AUTH_TOKEN=$NETLIFY_AUTH_TOKEN
+    - step:
         name: Build Frontend
         script:
           - cd frontend          
