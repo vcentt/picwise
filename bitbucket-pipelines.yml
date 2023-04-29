@@ -6,7 +6,6 @@ pipelines:
         script:
           - cd frontend          
           - npm install -g netlify-cli
-          - netlify init
           - npm install
           - npm run build
           - netlify deploy --dir=./build --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
