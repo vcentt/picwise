@@ -6,6 +6,7 @@ pipelines:
         script:
           - cd frontend
           - export NETLIFY_AUTH_TOKEN=$NETLIFY_AUTH_TOKEN
+          - export NETLIFY_SITE_ID=$NETLIFY_SITE_ID
     - step:
         name: Build Frontend
         script:
@@ -13,4 +14,4 @@ pipelines:
           - npm install -g netlify-cli
           - npm install
           - npm run build
-          - netlify deploy --dir=./build --auth=${{ env.NETLIFY_AUTH_TOKEN }} --site=$NETLIFY_SITE_ID
+          - netlify deploy --dir=./build --auth=${{ env.NETLIFY_AUTH_TOKEN }} --site=${{ env.NETLIFY_SITE_ID }}
