@@ -4,7 +4,7 @@ pipelines:
     - step:
         name: env
         script:
-          - cde frontend
+          - cd frontend
           - export NETLIFY_AUTH_TOKEN=$NETLIFY_AUTH_TOKEN
     - step:
         name: Build Frontend
