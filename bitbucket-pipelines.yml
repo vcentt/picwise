@@ -2,21 +2,10 @@ image: node:18.14.2
 pipelines:
   default:
     - step:
-        name: Application Build
+        name: Deploy frontend application
         script:
           - cd frontend
           - npm install
           - npm run build
-        artifacts:
-          - build/**
-    - step:
-        name: Install netlify CLI
-        script:
           - npm install -g netlify-cli
-    - step:
-        name: Deploy frontend application
-        script:
-          - cd frontend
-          - pwd
-          - ls -la
-          - netlify deploy --prod --dir=build/** --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
+          - netlify deploy --prod --dir=./build --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
