@@ -13,5 +13,8 @@ pipelines:
           - npm install -g netlify-cli
     - step:
         name: Deploy frontend application
-        script: 
+        script:
+          - cd frontend
+          - pwd
+          - ls -la
           - netlify deploy --prod --dir=./build --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
