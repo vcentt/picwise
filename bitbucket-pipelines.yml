@@ -10,7 +10,10 @@ pipelines:
         artifacts:
         - build/**
     - step:
-        name: Deploy frontend application
-        script:        
+        name: Installing Netlify-cli
+        script:
           - npm install -g netlify-cli
-          - netlify deploy --prod --dir=./build --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
+    - step:
+        name: Deploy frontend application
+        script:
+          - netlify deploy --prod --dir=frontend/build --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
