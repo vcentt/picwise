@@ -13,6 +13,8 @@ pipelines:
         name: Installing Netlify-cli
         script:
           - npm install -g netlify-cli
+        caches:
+          - node
     - step:
         name: Deploy frontend application
         script:
