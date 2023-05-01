@@ -8,7 +8,7 @@ pipelines:
         - npm install
         - npm run build
       artifacts:
-        build/**
+        - build/**
     - step:
         name: Deploy frontend application
         script:        
