@@ -1673,11 +1673,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/vcent/Documents/server/server.csproj",
+      "projectUniqueName": "/Users/vcent/picwise/server/server.csproj",
       "projectName": "server",
-      "projectPath": "/Users/vcent/Documents/server/server.csproj",
+      "projectPath": "/Users/vcent/picwise/server/server.csproj",
       "packagesPath": "/Users/vcent/.nuget/packages/",
-      "outputPath": "/Users/vcent/Documents/server/obj/",
+      "outputPath": "/Users/vcent/picwise/server/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/vcent/.nuget/NuGet/NuGet.Config"

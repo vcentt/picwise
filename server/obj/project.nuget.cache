@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rB9zbFTAKXk3yPxM4e79OdvlK2TT1iI6sWMGFS5n7lPt0+BPVn1G5CI+UA9a0UxB3aMQ3+95+F43P2ckNZL2Ww==",
+  "dgSpecHash": "MiFQQzMqK+e+0zgNwyoIcncMKFiEKqHdBbYdAQBA7kiAFDtZPu1jQ0iR8tyHdjNHQdPfY4E4M4nNmLK+NXo2Ng==",
   "success": true,
-  "projectFilePath": "/Users/vcent/Documents/server/server.csproj",
+  "projectFilePath": "/Users/vcent/picwise/server/server.csproj",
   "expectedPackageFiles": [
     "/Users/vcent/.nuget/packages/auth0.aspnetcore.authentication/1.2.0/auth0.aspnetcore.authentication.1.2.0.nupkg.sha512",
     "/Users/vcent/.nuget/packages/awssdk.core/3.7.100.14/awssdk.core.3.7.100.14.nupkg.sha512",
