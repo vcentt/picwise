@@ -1,12 +1,21 @@
 
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import { Home } from './components/Home'
+import { About } from './components/About'
 
 function App() {
   return (
-    <div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className='container'>
+      <header>
+        <Routes>
+          <Route path="/" element={ <Home/> } />
+          <Route path='about' element={ <About/> } />
+        </Routes>
+      </header>
+      <main>
+
+      </main>
     </div>
   )
 }
