@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/vcent/picwise/server/server.csproj": {}
+    "/Users/vcent/develop/projects/net/picwise/server/server.csproj": {}
   },
   "projects": {
-    "/Users/vcent/picwise/server/server.csproj": {
+    "/Users/vcent/develop/projects/net/picwise/server/server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vcent/picwise/server/server.csproj",
+        "projectUniqueName": "/Users/vcent/develop/projects/net/picwise/server/server.csproj",
         "projectName": "server",
-        "projectPath": "/Users/vcent/picwise/server/server.csproj",
+        "projectPath": "/Users/vcent/develop/projects/net/picwise/server/server.csproj",
         "packagesPath": "/Users/vcent/.nuget/packages/",
-        "outputPath": "/Users/vcent/picwise/server/obj/",
+        "outputPath": "/Users/vcent/develop/projects/net/picwise/server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/vcent/.nuget/NuGet/NuGet.Config"
